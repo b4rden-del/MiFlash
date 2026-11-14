@@ -72,7 +72,7 @@ esac
 check() {
     check1="$(fastboot devices)"
     sleep 2
-    if [ -z "$check1"]
+    if [ -z "$check1" ]
     then
         echo -e "${red}\nMake sure that other device is in fastboot mode and  properly connected with this device!"
         sleep 10
