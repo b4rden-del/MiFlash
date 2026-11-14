@@ -7,7 +7,7 @@ A lightweight tool for MIUI and Xiaomi HyperOS users that automates ROM flashing
 ---
 
 ## ⚠️ DISCLAIMER
-> **WARNING:** Use only on authorized devices. Flashing an incorrect ROM can cause a **hard brick** due to the lack of advanced device detection in this initial release. Use at your own risk.
+> **WARNING:** Use only on authorized devices. Flashing an incorrect ROM can cause a **hard brick** due to the lack of advanced device detection. Use at your own risk.
 
 ---
 
