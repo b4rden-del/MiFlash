@@ -32,6 +32,12 @@ case "$pth" in
     [Yy])
     echo -e "${blue}Enter your custom path including ROM filename:"
     read cpth
+        cpth="${cpth%\"}"
+        cpth="${cpth#\"}"
+        cpth="${cpth%\'}"
+        cpth="${cpth#\'}"
+        cpth="${cpth/#\~/$HOME}"
+        cpth="${cpth/#\$HOME/$HOME}"
     readonly a=0
     ;;
     [Nn]|"")
@@ -86,7 +92,7 @@ check() {
         :
     fi
 }
-#check
+check
 case $choice in
     1)
     echo -e "${green}Flashing all...${orange}"
