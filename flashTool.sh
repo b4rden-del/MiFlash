@@ -90,14 +90,17 @@ check
 case $choice in
     1)
     echo -e "${green}Flashing all..."
-    bash flash_all.sh
+    chmod +x flash_all.sh
+    ./flash_all.sh
     ;;
     2)
     echo "Flashing all except storage..."
-    bash flash_all_except_storage.sh
+    chmod +x flash_all_except_storage.sh
+    ./flash_all_except_storage.sh
     ;;
     3)
     echo "Flashing all and locking bootloader...${nc}"
-    bash flash_all_lock.sh
+    chmod +x flash_all_lock.sh
+    ./flash_all_lock.sh
     ;;
 esac

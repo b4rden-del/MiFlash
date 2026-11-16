@@ -2,6 +2,8 @@
 
 A lightweight tool for MIUI and Xiaomi HyperOS users that automates ROM flashing on Redmi and Poco devices without requiring root access.
 
+Credits: Fastboot binaries provided by https://github.com/nohajc/termux-adb
+
 ---
 
 ## ⚠️ DISCLAIMER
