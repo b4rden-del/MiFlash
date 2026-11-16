@@ -55,15 +55,15 @@ then
 fi
 folder=$(tar -tf "$cpth"|head -n 1)
 rom=$(dirname "$cpth")
-default= ~/storage/shared/Download
+default=~/storage/shared/Download
 echo -e "${blue}Extracting..."
 case "$a" in
-    1)
+    0)
     tar -xvf "$cpth" -C "$rom" &
     wait "$!"
     cd "$rom/$folder"
     ;;
-    0)
+    1)
     tar -xvf "$cpth" -C "$default" &
     wait "$!"
     cd "$default/$folder"
@@ -78,7 +78,7 @@ check() {
         sleep 10
     fi
         check2="$(fastboot devices)"
-    if [ -z "$check2"]
+    if [ -z "$check2" ]
     then
         echo -e "\nNot connected with other device!"
         exit 1
@@ -86,21 +86,19 @@ check() {
         :
     fi
 }
-check
+#check
 case $choice in
     1)
-    echo -e "${green}Flashing all..."
-    chmod +x flash_all.sh
-    ./flash_all.sh
+    echo -e "${green}Flashing all...${orange}"
+    bash flash_all.sh
     ;;
     2)
-    echo "Flashing all except storage..."
-    chmod +x flash_all_except_storage.sh
-    ./flash_all_except_storage.sh
+    echo "${green}Flashing all except storage...${orange}"
+    bash flash_all_except_storage.sh
     ;;
     3)
-    echo "Flashing all and locking bootloader...${nc}"
-    chmod +x flash_all_lock.sh
-    ./flash_all_lock.sh
+    echo "${green}Flashing all and locking bootloader...${orange}"
+    bash flash_all_lock.sh
     ;;
 esac
+echo -e "${green}Done.${nc}"
